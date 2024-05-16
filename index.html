@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="lib/chatbot-ui.css">
+    <script src="lib/RecordRTC.js"></script>
+	<script src="lib/hark.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/mic.css">
+    <link rel="stylesheet" type="text/css" href="lib/spinner.css">
+    <title>C-DAC ChatBot</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e5e5e5;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+        }
+        
+        section {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        p {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h1 id="heading">सी-डैक बॉट डेमो</h1>
+        <p id="sub_heading">चैट शुरू करने के लिए चैट बटन पर क्लिक करें</p>
+                    
+            <script>
+            micbutton.click();
+            //window.setTimeout(ChatSubmitAuto, 20000);
+             // functionQueue.enqueue(ChatSubmitAuto());
+            function ChatSubmitAuto() {
+            console.log("inside chatsubmitauto")
+            let userResponse = chatInput.value.trim();
+        if (userResponse !== "" && !specialCharacterPattern.test(userResponse)) {
+            setUserResponse()
+            send(userResponse)
+        } else {
+            var resp = [{
+                "recipient_id": "User",
+                "text": "Sorry! please type the query correctly"
+            }]
+            setBotResponse(resp);
+            chatInput.value = ""
+            return;
+        }
+   
+     }
+            
+          
+            </script>
+    </section>
+
+    
+    <div id="chat-container"></div>
+    <script src="./chatbot-ui.js"></script> 
+    <script>
+        createChatBot(theme = "purple")
+    </script>
+
+    
+
+
+
+</body>
+
+</html>
