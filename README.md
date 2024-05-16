@@ -5,11 +5,11 @@ This chatbot is using the rasa framework and an open-source frontend. The model 
 ## Features:
 * easliy plugable on any website
 * speech interface
-* tranlitration
+* translitration
 * lightweight
 
 
 Demo is available [here](https://speechindia.in/chatbot/multilingual/)
 
 
-Modification are do on [this](https://github.com/Elysian01/Rasa-Chatbot-UI) repo
+Modification are done on [this](https://github.com/Elysian01/Rasa-Chatbot-UI) repo
